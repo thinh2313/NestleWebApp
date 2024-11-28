@@ -1,0 +1,73 @@
+﻿@model IEnumerable<NestleWebApp.Data.EMPLOYEE>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>testingdataemployee</title>
+</head>
+<body>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IDCODE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NAME)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BU)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TIMEDRAW)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RESULT)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GIFT)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IDCODE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NAME)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BU)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TIMEDRAW)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RESULT)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GIFT)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</body>
+</html>
